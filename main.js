@@ -12,3 +12,25 @@ function add1(){
 
     list.appendChild(div);
 }
+
+function add2(){
+    let template = templateProduct.content.cloneNode(true);
+    let span = template.querySelector('span');
+    let b = template.querySelector('b');
+
+    span.innerHTML = quantity.value + " " + product.value;
+    b.innerHTML = " $ " + parseFloat(quantity.value) * parseFloat(price.value);
+
+    list.appendChild(template);
+}
+
+function add3(){
+    let content = `<div>
+        <p>
+            ${quantity.value} ${product.value}
+            <b> $ ${parseFloat(quantity.value) * parseFloat(price.value)}</b>
+        </p>
+    </div>`;
+
+    list.innerHTML += content;
+}
